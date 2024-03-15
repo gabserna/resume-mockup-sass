@@ -1,0 +1,21 @@
+@mixin active-flex {
+    display: flex;
+}
+
+@mixin thecolumns {
+    flex-direction: column;
+}
+
+@mixin limits {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin centered {
+    margin: 0 auto;
+}
+
+@mixin format {
+    width: 90%;
+    padding: $whole-em 0 $whole-em 0;
+}

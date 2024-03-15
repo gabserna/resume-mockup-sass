@@ -1,0 +1,194 @@
+@use 'mixin' as *;
+@import 'mixin';
+@import 'vars';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap');
+
+
+* {
+    padding: $padding-zero;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    @include centered;
+    padding: $padding-zero;
+    background-color: $bgnd-one;
+}
+
+.section {
+    @include centered;
+    width: 80%;
+    @include active-flex;
+    @include thecolumns;
+    background: $bgnd-two;
+    overflow: hidden;
+    margin-bottom: 2em;
+    padding: $padding-zero;
+    z-index: 1;
+}
+
+header {
+    width: 100%;
+}
+
+
+.topimg {
+    @include active-flex;
+
+    .bkgnd {
+        @include centered;
+        width: 80%;
+        height: 25em;
+        overflow: hidden;
+        position:absolute;
+        z-index: 2;
+    }
+    .bkgnd .layer {
+        background-color: $layer;
+        width: 100%;
+        height: 25em;
+        opacity: 0.5;
+        position: absolute;
+        z-index: 4;
+    }
+    .background-image {
+        @include centered;
+        width: 100%;
+    }
+
+    .resume-header {
+        @extend .bkgnd;
+        position: inherit;
+        z-index: 5;
+        color: $color-one;
+    
+        .introduce-me {
+            width: 90%;
+            height: 100%;
+            @include centered;
+            @include active-flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .myphoto {
+            width: 12em;
+            height: 12em;
+            border-radius: 100%;
+        }
+        .name {
+            width: 55em;
+        }
+    }
+}
+
+
+h1, h2, h3, h4, h5 {
+    @include limits;
+    h3 {
+        padding-top: $half-em;
+    }
+    
+    h4 {
+        padding-top: $whole-em;
+    }
+}
+
+.training {
+    padding-left: $whole-em;
+}
+
+h1 {
+    font-size: 4em;
+}
+h2{
+    font-size: 1.8em;
+    text-transform: $upper-text;
+    letter-spacing: 8px;
+    padding-left: $half-em;
+}
+
+.datadiv {
+    @include centered;
+    width: 100%;
+    height: auto;
+    @include active-flex;
+    flex-direction: row;
+
+    .leftsection {
+        @include centered;
+        width: 35%;
+        padding: $padding-zero;
+    
+        .leftcol {
+            height: 100%;
+
+            .contact, .levels, .education {
+                border-top: 2px solid $color-two;
+            }
+        }
+    }
+    .rghtsection {
+        @include centered;
+        width: 65%;
+        padding: $padding-zero;
+    
+        .rightcol {
+            background: $bgnd-three;
+            height: 100%;
+
+            .workexp2, .courses, .social {
+                border-top: 2px solid $color-one;
+                padding-top: $whole-em;
+            }
+        }
+    }
+}
+
+
+.personal, 
+.contact, 
+.contactme, 
+.levels, 
+.education, 
+.school, 
+.skills-bar, 
+.experience, 
+.my-social-network {
+    @include centered;
+    @include format;
+}
+
+
+.myskills {
+    @include thecolumns;
+
+    progress {
+        appearance: none;
+        width: 22vw;
+        height: 1vw;
+    }
+    ::-webkit-progress-value {
+        background: $color-two;
+    }
+    ::-webkit-progress-bar {
+        background: transparent;
+        border: 2px solid $color-two;
+    }
+    
+}
+
+ul li {
+    list-style:none;
+    padding: 10px;
+}
+
+li:before {
+    content: "+";
+    padding-right: -5em;
+}
+
+p {
+    padding: $half-em 0 $half-em 0;
+}
